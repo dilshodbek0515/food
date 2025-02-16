@@ -12,10 +12,10 @@ const Login: React.FC = () => {
   const handleLogin = () => {
     if (name && surname) {
       login({ name, surname })
-      toast.success(`Tabriklaymiz siz ro'yxatdan o'tdingiz !`)
       setTimeout(() => {
+        toast.success(`Tabriklaymiz siz ro'yxatdan o'tdingiz !`)
         navigate('/home')
-      }, 1000)
+      }, 500)
     } else {
       toast.error('Iltimos Ism Familiyangizni kiriting !!!')
     }
