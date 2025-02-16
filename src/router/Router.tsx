@@ -9,17 +9,22 @@ import Contact from '../pages/contact/Contact'
 import Detail from '../pages/detail/Detail'
 import Order from '../pages/order/Order'
 import Error from '../pages/error/Error'
+import Login from '../pages/login/Login'
 
 const Router = () => {
   return (
     <div>
       {useRoutes([
         {
+          path: '/login',
+          element: <Login />
+        },
+        {
           path: '/',
           element: <Layout />,
           children: [
             {
-              path: '/',
+              path: '/home',
               element: <Home />
             },
             {
