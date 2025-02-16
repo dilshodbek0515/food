@@ -1,0 +1,11 @@
+body {
+    background-image: url("../src/assets/images/bigbg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.bgbg {
+    background-image: url("../src/assets/images/Pizza.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
