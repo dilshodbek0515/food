@@ -22,7 +22,7 @@ const Login: React.FC = () => {
   }
   return (
     <div className='flex items-center justify-center w-full h-screen bgbg p-5'>
-      <form className='w-[550px] h-[600px] bg-[#2e2c2cde] rounded-2xl flex items-center justify-center flex-col p-5 max-sm:h-[500px]'>
+      <form className='w-[550px] h-[600px] bg-[#2e2c2cde] rounded-2xl flex items-center justify-center flex-col gap-5 p-5 max-sm:h-[500px]'>
         <h2 className='text-5xl text-center font-bold text-white mb-20'>
           Login
         </h2>
@@ -34,7 +34,6 @@ const Login: React.FC = () => {
           className='w-full h-16 rounded-md outline-none border-2 border-white bg-transparent px-5 py-1 text-white'
           required
         />
-        <br />
         <input
           type='text'
           placeholder='Familiyangiz'
@@ -43,7 +42,6 @@ const Login: React.FC = () => {
           className='w-full h-16 rounded-md outline-none border-2 border-white bg-transparent px-5 py-1 text-white'
           required
         />
-        <br />
         <Button
           variant='contained'
           disableElevation
