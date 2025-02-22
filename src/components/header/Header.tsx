@@ -21,19 +21,19 @@ const Header = () => {
         </Link>
         <ul className='flex items-center justify-center gap-10 max-xl:gap-5 max-md:hidden'>
           <li className='text-xl duration-200 hover:text-gray- whitespace-nowrap max-xl:text-sm'>
-            <Link to={'/menu'}>Меню</Link>
+            <Link to={'/menu'}>Menu</Link>
           </li>
           <li className='text-xl duration-200 hover:text-gray- whitespace-nowrap max-xl:text-sm'>
-            <Link to={'/gallery'}>Новости</Link>
+            <Link to={'/gallery'}>News</Link>
           </li>
           <li className='text-xl duration-200 hover:text-gray- whitespace-nowrap max-xl:text-sm'>
-            <Link to={'/booking'}>Бронирование</Link>
+            <Link to={'/booking'}>Booking</Link>
           </li>
           <li className='text-xl duration-200 hover:text-gray- whitespace-nowrap max-xl:text-sm'>
-            <Link to={'/about'}>О нас</Link>
+            <Link to={'/about'}>About Us</Link>
           </li>
           <li className='text-xl duration-200 hover:text-gray- whitespace-nowrap max-xl:text-sm'>
-            <Link to={'/contact'}>Контакты</Link>
+            <Link to={'/contact'}>Contacts</Link>
           </li>
         </ul>
         <div className='flex items-center justify-center gap-3'>
