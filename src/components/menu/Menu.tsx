@@ -1,7 +1,10 @@
+import React from 'react'
 
-const Menu = () => {
+const Menu: React.FC = () => {
   return (
-    <div>Menu</div>
+    <div className='w-full h-auto p-5'>
+      <div className='container mx-auto'></div>
+    </div>
   )
 }
 
