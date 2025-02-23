@@ -33,11 +33,13 @@ const Menu: React.FC = () => {
               className='h-auto border-2 rounded-xl p-5 flex flex-col gap-3 header_bg'
               key={item.id}
             >
-              <img
-                className='w-full h-[80%] object-cover rounded-xl'
-                src={item.image}
-                alt='img'
-              />
+              <div className='w-full h-[80%] rounded-xl overflow-hidden'>
+                <img
+                  className=' object-cover rounded-xl hover:scale-110 duration-300 cursor-pointer'
+                  src={item.image}
+                  alt='img'
+                />
+              </div>
               <div className='flex items-center justify-between gap-2'>
                 <h3 className='text-xl font-bold'>{item.name}</h3>
                 <FaRegHeart className='text-2xl cursor-pointer' />
