@@ -4,6 +4,10 @@ body {
     background-size: cover;
 }
 
+body::-webkit-scrollbar {
+    width: 0;
+}
+
 .bgbg {
     background-image: url("../src/assets/images/Pizza.webp");
     background-repeat: no-repeat;
