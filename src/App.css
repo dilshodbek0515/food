@@ -17,3 +17,15 @@ body::-webkit-scrollbar {
 .header_bg {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.4) 100%);
 }
+
+.footer_bg {
+    background-image: url("../src/assets/images/footer_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.opacite {
+    background-image: url("../src/assets/images/opasite.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
