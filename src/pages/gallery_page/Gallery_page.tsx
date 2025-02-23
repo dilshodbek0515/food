@@ -5,7 +5,6 @@ const Gallery_page = () => {
   return (
     <div>
       <Gallery />
-      <Gallery />
       <Navoste />
     </div>
   )
