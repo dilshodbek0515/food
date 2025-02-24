@@ -4,8 +4,8 @@ import Navoste from '../../components/navoste/Navoste'
 const Gallery_page = () => {
   return (
     <div>
-      <Gallery />
       <Navoste />
+      <Gallery />
     </div>
   )
 }

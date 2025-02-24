@@ -32,7 +32,7 @@ const Router = () => {
               element: <Menu />
             },
             {
-              path: '/gallery',
+              path: '/news',
               element: <Gallery />
             },
             {
