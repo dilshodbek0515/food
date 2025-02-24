@@ -14,7 +14,7 @@ const Login: React.FC = () => {
       login({ name, surname })
       setTimeout(() => {
         toast.success(`Tabriklaymiz siz ro'yxatdan o'tdingiz !`)
-        navigate('/home')
+        navigate('/')
       }, 500)
     } else {
       toast.error('Iltimos Ism Familiyangizni kiriting !!!')

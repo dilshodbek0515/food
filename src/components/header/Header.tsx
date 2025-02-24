@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <header className='w-full h-auto p-5'>
       <div className='container mx-auto p-10 header_bg rounded-xl flex items-center justify-between gap-5 max-sm:p-2'>
-        <Link to={'/home'}>
+        <Link to={'/'}>
           <h2 className='text-5xl font-extrabold max-xl:text-3xl'>LOGO</h2>
         </Link>
         <ul className='flex items-center justify-center gap-10 max-xl:gap-5 max-md:hidden'>

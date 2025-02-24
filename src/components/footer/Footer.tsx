@@ -8,7 +8,7 @@ const Footer = () => {
       <div className='opacite p-5 py-20'>
         <div className='container mx-auto flex justify-between max-lg:flex-wrap max-lg:gap-32'>
           <div className='flex flex-col items-start gap-5'>
-            <Link to={'/home'}>
+            <Link to={'/'}>
               <h4 className='text-5xl font-extrabold max-xl:text-3xl'>LOGO</h4>
             </Link>
             <div className='flex items-center gap-3 text-2xl'>
