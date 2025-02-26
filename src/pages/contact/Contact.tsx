@@ -1,8 +1,47 @@
+import React, { useState } from 'react'
+import toast from 'react-hot-toast'
 import { BiSolidPhoneOutgoing } from 'react-icons/bi'
 import { FaMapLocationDot } from 'react-icons/fa6'
 import { TiDownload } from 'react-icons/ti'
 
 const Contact = () => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [phone, setPhone] = useState('')
+  const [message, setMessage] = useState('')
+
+  const BOT_TOKEN = '7663778517:AAHLTijMCfFznDWG_1RuAK8YxoRBhYsWPe4'
+  const CHAT_ID = '6891591255'
+
+  const handleChange = async () => {
+    const text = `📩 *Yangi xabar*%0A👤 Ism: ${name}%0A📧 Email: ${email}%0A📞 Telefon: ${phone}%0A💬 Xabar: ${message}`
+    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${text}&parse_mode=Markdown`
+
+    try {
+      const response = await fetch(url)
+      if (response.ok) {
+        toast.success(' Xabar muvaffaqiyatli yuborildi!')
+        setName('')
+        setEmail('')
+        setPhone('')
+        setMessage('')
+      } else {
+        toast.error(' Xabar yuborishda xatolik yuz berdi.')
+      }
+    } catch (error) {
+      toast.error(" Tarmoq xatosi. Qaytadan urinib ko'ring.")
+    }
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (name && email && phone && message) {
+      handleChange()
+    } else {
+      toast.error("⚠️ Iltimos, barcha maydonlarni to'ldiring.")
+    }
+  }
+
   return (
     <div className='w-full h-auto p-5 mt-32'>
       <div className='flex flex-col gap-20'>
@@ -42,32 +81,46 @@ const Contact = () => {
         <h2 className='text-center text-7xl text-black font-bold max-md:text-4xl'>
           Write to us
         </h2>
-        <form className='flex flex-col gap-5 items-end w-[800px] max-lg:w-full'>
+        <form
+          onSubmit={handleSubmit}
+          className='flex flex-col gap-5 items-end w-[800px] max-lg:w-full'
+        >
           <input
             className='w-full h-14 bg-transparent border-2 rounded-xl text-black text-xl px-5 outline-none'
             placeholder='Your name'
             type='text'
             required
+            onChange={e => setName(e.target.value)}
+            value={name}
           />
           <input
             className='w-full h-14 bg-transparent border-2 rounded-xl text-black text-xl px-5 outline-none'
             placeholder='Your email'
             type='email'
             required
+            onChange={e => setEmail(e.target.value)}
+            value={email}
           />
           <input
             className='w-full h-14 bg-transparent border-2 rounded-xl text-black text-xl px-5 outline-none'
             placeholder='Your phone'
             type='text'
             required
+            onChange={e => setPhone(e.target.value)}
+            value={phone}
           />
           <input
             className='w-full h-14 bg-transparent border-2 rounded-xl text-black text-xl px-5 outline-none'
             placeholder='Your message'
             type='text'
             required
+            onChange={e => setMessage(e.target.value)}
+            value={message}
           />
-          <button className='w-52 h-14 bg-black rounded-xl text-white text-xl'>
+          <button
+            type='submit'
+            className='w-52 h-14 bg-black rounded-xl text-white text-xl'
+          >
             Send
           </button>
         </form>
