@@ -52,11 +52,7 @@ const Header = () => {
           >
             <LuLogOut />
           </div>
-          <div
-            className='w-10 h-10 rounded-full border-2 border-black flex items-center justify-center text-xl cursor-pointer max-xl:w-7 max-xl:h-7 max-xl:text-sm'
-            style={{ display: 'none' }}
-            onClick={handlelogOut}
-          >
+          <div className='w-10 h-10 rounded-full border-2 border-black flex items-center justify-center text-xl cursor-pointer max-xl:w-7 max-xl:h-7 max-xl:text-sm'>
             <IoMenu />
           </div>
         </div>
