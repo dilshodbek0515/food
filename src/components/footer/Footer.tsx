@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className='w-full h-auto footer_bg mt-40'>
       <div className='opacite p-5 py-20'>
-        <div className='container mx-auto flex justify-between max-lg:flex-wrap max-lg:gap-32'>
+        <div className='container mx-auto flex justify-between max-lg:flex-wrap max-lg:gap-16'>
           <div className='flex flex-col items-start gap-5'>
             <Link to={'/'}>
               <h4 className='text-5xl font-extrabold max-xl:text-3xl'>LOGO</h4>

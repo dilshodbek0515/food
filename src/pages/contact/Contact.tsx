@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { BiSolidPhoneOutgoing } from 'react-icons/bi'
 import { FaMapLocationDot } from 'react-icons/fa6'
 import { TiDownload } from 'react-icons/ti'
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
@@ -43,7 +46,7 @@ const Contact = () => {
   }
 
   return (
-    <div className='w-full h-auto p-5 mt-32'>
+    <div className='w-full h-auto p-5 mt-44'>
       <div className='flex flex-col gap-20'>
         <h2 className='text-center text-7xl text-black font-bold max-md:text-4xl'>
           Our team

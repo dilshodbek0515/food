@@ -1,8 +1,12 @@
 import Gallery from '../../components/gallery/Gallery'
 import book from '../../assets/images/booking.png'
+import { useEffect } from 'react'
 const Booking = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   return (
-    <div className='w-full h-auto p-5 flex flex-col mt-20'>
+    <div className='w-full h-auto p-5 flex flex-col mt-44'>
       <div className='container mx-auto flex flex-col items-center justify-center gap-20'>
         <h2 className='text-center text-black font-bold text-7xl max-sm:text-5xl'>
           Booking

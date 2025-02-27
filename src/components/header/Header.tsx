@@ -14,8 +14,8 @@ const Header = () => {
     }, 500)
   }
   return (
-    <header className='w-full h-auto p-5'>
-      <div className='container mx-auto p-10 header_bg rounded-xl flex items-center justify-between gap-5 max-sm:p-2'>
+    <header className='w-full h-auto fixed top-0 bg-slate-100 z-10'>
+      <div className='container mx-auto p-10 rounded-xl flex items-center justify-between gap-5 max-sm:p-2'>
         <Link to={'/'}>
           <h2 className='text-5xl font-extrabold max-xl:text-3xl'>LOGO</h2>
         </Link>
