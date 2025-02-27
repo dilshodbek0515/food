@@ -6,11 +6,9 @@ import { IoMenu } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 const Sidebar = () => {
   const [open, setOpen] = React.useState(false)
-
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen)
   }
-
   const DrawerList = (
     <Box
       sx={{
@@ -19,7 +17,6 @@ const Sidebar = () => {
         flexDirection: 'column',
         gap: '20px'
       }}
-      role='presentation'
     >
       <Link to={'/'} className='pl-5 pt-5'>
         <h2
@@ -65,7 +62,7 @@ const Sidebar = () => {
     </Box>
   )
   return (
-    <div>
+    <>
       <div
         onClick={toggleDrawer(true)}
         className='w-10 h-10 rounded-full border-2 border-black text-xl cursor-pointer max-xl:w-7 max-xl:h-7 max-xl:text-sm hidden max-md:block max-[767px]:flex max-md:items-center max-md:justify-center '
@@ -75,7 +72,7 @@ const Sidebar = () => {
       <Drawer open={open} onClose={toggleDrawer(false)}>
         {DrawerList}
       </Drawer>
-    </div>
+    </>
   )
 }
 
