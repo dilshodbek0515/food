@@ -1,9 +1,9 @@
-import { FaCartArrowDown, FaRegHeart, FaUser } from 'react-icons/fa'
+import { FaCartArrowDown, FaRegHeart } from 'react-icons/fa'
 import { LuLogOut } from 'react-icons/lu'
 import { Link, useNavigate } from 'react-router-dom'
 import { logOut } from '../../pages/auth/Auth'
 import toast, { Toaster } from 'react-hot-toast'
-import { IoMenu } from 'react-icons/io5'
+import Sidebar from '../sidebar/Sidebar'
 const Header = () => {
   const navigate = useNavigate()
   const handlelogOut = () => {
@@ -43,18 +43,13 @@ const Header = () => {
           <div className='w-10 h-10 rounded-full border-2 border-black flex items-center justify-center text-xl cursor-pointer max-xl:w-7 max-xl:h-7 max-xl:text-sm'>
             <FaCartArrowDown />
           </div>
-          <div className='w-10 h-10 rounded-full border-2 border-black flex items-center justify-center text-xl cursor-pointer max-xl:w-7 max-xl:h-7 max-xl:text-sm'>
-            <FaUser />
-          </div>
           <div
             className='w-10 h-10 rounded-full border-2 border-black flex items-center justify-center text-xl cursor-pointer max-xl:w-7 max-xl:h-7 max-xl:text-sm'
             onClick={handlelogOut}
           >
             <LuLogOut />
           </div>
-          <div className='w-10 h-10 rounded-full border-2 border-black flex items-center justify-center text-xl cursor-pointer max-xl:w-7 max-xl:h-7 max-xl:text-sm'>
-            <IoMenu />
-          </div>
+          <Sidebar />
         </div>
       </div>
       <Toaster position='top-center' reverseOrder={false} />
