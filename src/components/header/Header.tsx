@@ -13,6 +13,7 @@ const Header = () => {
       navigate('/login')
     }, 500)
   }
+  
   return (
     <header className='w-full h-auto fixed top-0 bg-slate-100 z-10'>
       <div className='container mx-auto p-10 rounded-xl flex items-center justify-between gap-5 max-sm:p-2'>

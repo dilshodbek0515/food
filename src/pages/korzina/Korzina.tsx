@@ -12,7 +12,7 @@ const Korzina: React.FC = () => {
     return (
       <div className='flex items-center justify-center flex-col gap-14 mt-44'>
         <img
-          className='w-96 h-96 rounded-2xl'
+          className='w-96 h-96 rounded-2xl max-sm:w-72 max-sm:h-72'
           src='https://static.vecteezy.com/system/resources/thumbnails/005/006/007/small/no-item-in-the-shopping-cart-click-to-go-shopping-now-concept-illustration-flat-design-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-vector.jpg'
           alt='empty'
         />
