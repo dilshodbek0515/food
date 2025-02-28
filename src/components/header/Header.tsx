@@ -40,9 +40,9 @@ const Header = () => {
           <div className='w-10 h-10 rounded-full border-2 border-black flex items-center justify-center text-xl cursor-pointer max-xl:w-7 max-xl:h-7 max-xl:text-sm'>
             <FaRegHeart />
           </div>
-          <div className='w-10 h-10 rounded-full border-2 border-black flex items-center justify-center text-xl cursor-pointer max-xl:w-7 max-xl:h-7 max-xl:text-sm'>
+          <Link to={"/korzina"} className='w-10 h-10 rounded-full border-2 border-black flex items-center justify-center text-xl cursor-pointer max-xl:w-7 max-xl:h-7 max-xl:text-sm'>
             <FaCartArrowDown />
-          </div>
+          </Link>
           <div
             className='w-10 h-10 rounded-full border-2 border-black flex items-center justify-center text-xl cursor-pointer max-xl:w-7 max-xl:h-7 max-xl:text-sm'
             onClick={handlelogOut}

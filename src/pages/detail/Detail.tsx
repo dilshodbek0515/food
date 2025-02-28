@@ -5,7 +5,8 @@ import Loading from '../../components/loading/Loading'
 import Error from '../error/Error'
 import Star from '../../components/star/Star'
 import { FaMinus, FaPlus } from 'react-icons/fa'
-
+import { addToCart } from '../../redux/cartSlice'
+import { useDispatch } from 'react-redux'
 interface Recipe {
   id: number
   name: string
@@ -23,6 +24,7 @@ const Detail: React.FC = () => {
   const [product, setProduct] = useState<Recipe | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
   const [count, setCount] = useState<number>(0)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     setLoading(true)
@@ -36,10 +38,25 @@ const Detail: React.FC = () => {
   if (loading) return <Loading />
   if (!product) return <Error />
 
+  const handleKorzina = () => {
+    if (product) {
+      dispatch(
+        addToCart({
+          id: product.id,
+          name: product.name,
+          image: product.image,
+          count
+        })
+      )
+    }
+    setCount(0)
+  }
   return (
     <div className='w-full h-auto p-5 mt-44'>
       <div className='container mx-auto rounded-2xl p-10 flex flex-col items-center justify-between gap-20 detail_bg'>
-        <h2 className='text-5xl text-black font-mono font-bold'>{product.tags[0]}</h2>
+        <h2 className='text-5xl text-black font-mono font-bold'>
+          {product.tags[0]}
+        </h2>
         <div className='flex items-center justify-center gap-32 max-xl:gap-10 max-lg:flex-col'>
           <img
             className='max-w-[500px] max-h-[500px] object-cover rounded-full border-2 border-gray-500 p-3 hover:p-0 hover:border-none duration-300 max-xl:w-96 max-xl:h-96 max-sm:w-full max-sm:h-full'
@@ -61,7 +78,7 @@ const Detail: React.FC = () => {
               {product.instructions}
             </p>
             <div className='flex items-center gap-10 max-sm:flex-wrap max-sm:mt-10'>
-              <button className='w-44 h-12 bg-gray-200 rounded-lg text-black text-xl flex items-center justify-between px-5'>
+              <div className='w-44 h-12 bg-gray-200 rounded-lg text-black text-xl flex items-center justify-between px-5'>
                 <button
                   disabled={count === 0}
                   onClick={() => setCount(p => p - 1)}
@@ -73,8 +90,11 @@ const Detail: React.FC = () => {
                 <button onClick={() => setCount(p => p + 1)}>
                   <FaPlus />
                 </button>
-              </button>
-              <button className='w-44 h-12 bg-black rounded-lg text-white text-xl hover:opacity-85'>
+              </div>
+              <button
+                onClick={handleKorzina}
+                className='w-44 h-12 bg-black rounded-lg text-white text-xl hover:opacity-85'
+              >
                 Add to cart
               </button>
             </div>

@@ -7,9 +7,10 @@ import Booking from '../pages/booking/Booking'
 import About from '../pages/about/About'
 import Contact from '../pages/contact/Contact'
 import Detail from '../pages/detail/Detail'
-import Order from '../pages/order/Order'
 import Error from '../pages/error/Error'
 import Login from '../pages/login/Login'
+import Korzina from '../pages/korzina/Korzina'
+import Likes from '../pages/likes/Likes'
 
 const Router = () => {
   return (
@@ -52,8 +53,12 @@ const Router = () => {
               element: <Detail />
             },
             {
-              path: '/order',
-              element: <Order />
+              path: '/likes',
+              element: <Likes />
+            },
+            {
+              path: '/korzina',
+              element: <Korzina />
             }
           ]
         },
