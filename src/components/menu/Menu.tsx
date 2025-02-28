@@ -38,7 +38,7 @@ const Menu: React.FC = () => {
           <div className='container mx-auto grid grid-cols-4 gap-5 max-2xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1'>
             {pizza?.slice(0, 8)?.map((item: Recipe) => (
               <div
-                className='h-auto border-2 rounded-xl p-5 flex flex-col gap-3 header_bg'
+                className='h-auto rounded-xl p-5 flex flex-col gap-3 header_bg'
                 key={item.id}
               >
                 <div

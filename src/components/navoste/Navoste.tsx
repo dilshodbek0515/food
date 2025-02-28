@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Loading from '../loading/Loading'
+import { useNavigate } from 'react-router-dom'
 interface Recipe {
   id: number
   image: string
@@ -8,6 +9,7 @@ interface Recipe {
 }
 
 const Navoste: React.FC = () => {
+  const navigate = useNavigate()
   const [pizza, setPizza] = useState<any>([])
   const [loading, setLoading] = useState(false)
   useEffect(() => {
@@ -38,6 +40,7 @@ const Navoste: React.FC = () => {
               >
                 <div className='w-full h-full rounded-xl overflow-hidden'>
                   <img
+                    onClick={() => navigate(`/detail/${item.id}`)}
                     className=' object-cover rounded-xl hover:scale-110 duration-300 cursor-pointer'
                     src={item.image}
                     alt='img'

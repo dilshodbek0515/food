@@ -48,7 +48,9 @@ const Detail: React.FC = () => {
               {product.name}
             </h2>
             <div className='flex items-center gap-5 h-8'>
-              <strong className='text-2xl font-bold font-mono'>$ 10.0</strong>
+              <strong className='text-2xl font-bold font-mono'>
+                $ {10 * count}.0
+              </strong>
               <Star />
             </div>
             <p className='text-xl font-mono text-black'>Description :</p>
