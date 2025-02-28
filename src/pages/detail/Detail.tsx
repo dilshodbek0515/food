@@ -7,6 +7,7 @@ import Star from '../../components/star/Star'
 import { FaMinus, FaPlus } from 'react-icons/fa'
 import { addToCart } from '../../redux/cartSlice'
 import { useDispatch } from 'react-redux'
+import toast from 'react-hot-toast'
 interface Recipe {
   id: number
   name: string
@@ -39,17 +40,20 @@ const Detail: React.FC = () => {
   if (!product) return <Error />
 
   const handleKorzina = () => {
+    if (count === 0) return
     if (product) {
       dispatch(
         addToCart({
           id: product.id,
           name: product.name,
           image: product.image,
+          price: product.price,
           count
         })
       )
     }
     setCount(0)
+    toast.success("Mahsulot savatga qo'shildi")
   }
   return (
     <div className='w-full h-auto p-5 mt-44'>
