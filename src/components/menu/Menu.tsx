@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { FaCartPlus, FaRegHeart } from 'react-icons/fa'
 import Loading from '../loading/Loading'
+import { useNavigate } from 'react-router-dom'
 interface Recipe {
   id: number
   name: string
@@ -13,6 +14,7 @@ interface Recipe {
 const Menu: React.FC = () => {
   const [pizza, setPizza] = useState<any>([])
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate()
   useEffect(() => {
     setLoading(true)
     axios
@@ -39,7 +41,10 @@ const Menu: React.FC = () => {
                 className='h-auto border-2 rounded-xl p-5 flex flex-col gap-3 header_bg'
                 key={item.id}
               >
-                <div className='w-full h-[80%] rounded-xl overflow-hidden'>
+                <div
+                  className='w-full h-[80%] rounded-xl overflow-hidden'
+                  onClick={() => navigate(`/detail/${item.id}`)}
+                >
                   <img
                     className=' object-cover rounded-xl hover:scale-110 duration-300 cursor-pointer'
                     src={item.image}

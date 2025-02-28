@@ -4,6 +4,12 @@ body {
     background-size: cover;
 }
 
+.detail_bg {
+    background-image: url("../src/assets/images/bigbg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 body::-webkit-scrollbar {
     width: 0;
 }

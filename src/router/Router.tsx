@@ -48,7 +48,7 @@ const Router = () => {
               element: <Contact />
             },
             {
-              path: '/detail',
+              path: '/detail/:id',
               element: <Detail />
             },
             {
