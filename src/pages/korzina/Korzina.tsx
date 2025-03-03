@@ -5,6 +5,8 @@ import { FaTrash } from 'react-icons/fa'
 import { removeFromCart } from '../../redux/cartSlice'
 import { Link } from 'react-router-dom'
 import toast from 'react-hot-toast'
+import axios from 'axios'
+import { clearCart } from '../../redux/cartSlice'
 const Korzina: React.FC = () => {
   const cart = useSelector((state: RootState) => state.cart.items)
   const dispatch = useDispatch()
@@ -31,6 +33,41 @@ const Korzina: React.FC = () => {
 
   const totalProducts = cart.reduce((sum, item) => sum + item.count, 0)
   const totalPrice = cart.reduce((sum, item) => sum + 10 * item.count, 0)
+
+  const handleSend = async () => {
+    const BOT_TOKEN = '7663778517:AAHLTijMCfFznDWG_1RuAK8YxoRBhYsWPe4'
+    const CHAT_ID = '6891591255'
+    const API_URL = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`
+
+    if (cart.length === 0) {
+      toast.error("Korzina bo'sh")
+      return
+    }
+
+    const orderDetails = cart
+      .map(
+        item =>
+          `📌 *${item.name}*\n  📦 Soni: ${item.count}\n  💰 Narxi: $${
+            10 * item.count
+          }.0`
+      )
+      .join('\n\n')
+
+    const message = `🛒 *Yangi Buyurtma!*\n\n${orderDetails}\n\n🔢 *Jami mahsulotlar:* ${totalProducts}\n💵 *Umumiy narx:* $${totalPrice}.0\n🚚 Yetkazib berish: *Bepul*`
+
+    try {
+      await axios.post(API_URL, {
+        chat_id: CHAT_ID,
+        text: message,
+        parse_mode: 'Markdown'
+      })
+      dispatch(clearCart())
+      toast.success('Buyurtma yuborildi!')
+    } catch (error) {
+      console.error('Telegram xatosi:', error)
+      toast.error('Buyurtma yuborishda xatolik yuz berdi')
+    }
+  }
 
   return (
     <div className='flex flex-col gap-20'>
@@ -102,7 +139,10 @@ const Korzina: React.FC = () => {
           <span>Total:</span>
           <span> $ {totalPrice} .0</span>
         </div>
-        <button className='mt-4 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition'>
+        <button
+          onClick={handleSend}
+          className='mt-4 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition'
+        >
           Order
         </button>
       </div>
