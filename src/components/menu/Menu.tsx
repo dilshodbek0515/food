@@ -16,6 +16,13 @@ interface Recipe {
   price: number
 }
 
+interface CartItem {
+  id: number
+  name: string
+  image: string
+  price: number
+  count: number
+}
 const Menu: React.FC = () => {
   const [pizza, setPizza] = useState<Recipe[]>([])
   const [loading, setLoading] = useState(false)
@@ -33,7 +40,7 @@ const Menu: React.FC = () => {
       .finally(() => setLoading(false))
   }, [])
 
-  const handleKorzina = (item: Recipe) => {
+  const handleKorzina = (item: CartItem) => {
     if (item) {
       dispatch(
         addToCart({
@@ -101,7 +108,7 @@ const Menu: React.FC = () => {
                   <div className='flex items-center justify-between gap-2'>
                     <h3 className='text-2xl font-bold'>$ 10.0</h3>
                     <FaCartPlus
-                      onClick={() => handleKorzina(item)}
+                      onClick={() => handleKorzina({ ...item, count: 1 })}
                       className='text-2xl cursor-pointer'
                     />
                   </div>
