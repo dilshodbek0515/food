@@ -18,7 +18,6 @@ const Navoste: React.FC = () => {
       .get('https://dummyjson.com/recipes')
       .then(res => {
         setPizza(res.data.recipes)
-        console.log(res.data.recipes)
       })
       .catch(err => console.log(err))
       .finally(() => setLoading(false))

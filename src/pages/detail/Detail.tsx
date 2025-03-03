@@ -8,21 +8,20 @@ import { FaMinus, FaPlus } from 'react-icons/fa'
 import { addToCart } from '../../redux/cartSlice'
 import { useDispatch } from 'react-redux'
 import toast from 'react-hot-toast'
-interface Recipe {
+
+interface CartItem {
   id: number
   name: string
   image: string
   tags: string
-  price: number
   instructions: string
 }
-
 const Detail: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
   const { id } = useParams<{ id: string }>()
-  const [product, setProduct] = useState<Recipe | null>(null)
+  const [product, setProduct] = useState<CartItem | null>(null)
   const [loading, setLoading] = useState<boolean>(false)
   const [count, setCount] = useState<number>(0)
   const dispatch = useDispatch()
@@ -47,7 +46,6 @@ const Detail: React.FC = () => {
           id: product.id,
           name: product.name,
           image: product.image,
-          price: product.price,
           count
         })
       )

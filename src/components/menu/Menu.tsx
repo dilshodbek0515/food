@@ -13,14 +13,12 @@ interface Recipe {
   name: string
   image: string
   tags: string
-  price: number
 }
 
 interface CartItem {
   id: number
   name: string
   image: string
-  price: number
   count: number
 }
 const Menu: React.FC = () => {
@@ -47,7 +45,6 @@ const Menu: React.FC = () => {
           id: item.id,
           name: item.name,
           image: item.image,
-          price: item.price,
           count: 1
         })
       )

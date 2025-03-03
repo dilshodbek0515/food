@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
 import { FaTrash } from 'react-icons/fa'
@@ -8,6 +8,9 @@ import toast from 'react-hot-toast'
 import axios from 'axios'
 import { clearCart } from '../../redux/cartSlice'
 const Korzina: React.FC = () => {
+  useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [])
   const cart = useSelector((state: RootState) => state.cart.items)
   const dispatch = useDispatch()
   if (cart.length === 0) {

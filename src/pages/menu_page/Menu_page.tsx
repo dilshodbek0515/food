@@ -13,11 +13,20 @@ interface Recipe {
   name: string
   image: string
   tags: string
-  price: number
+}
+
+interface CartItem {
+  id: number
+  name: string
+  image: string
+  tags: string
 }
 
 const Menu_page: React.FC = () => {
-  const [pizza, setPizza] = useState<Recipe[]>([])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+  const [pizza, setPizza] = useState<CartItem[]>([])
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -33,14 +42,13 @@ const Menu_page: React.FC = () => {
       .finally(() => setLoading(false))
   }, [])
 
-  const handleKorzina = (item: Recipe) => {
+  const handleKorzina = (item: CartItem) => {
     if (item) {
       dispatch(
         addToCart({
           id: item.id,
           name: item.name,
           image: item.image,
-          price: item.price,
           count: 1
         })
       )

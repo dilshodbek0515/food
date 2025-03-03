@@ -5,7 +5,6 @@ interface Recipe {
   name: string
   image: string
   tags: string
-  price: number
   isLiked: boolean
 }
 

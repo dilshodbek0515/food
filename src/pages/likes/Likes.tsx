@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { FaCartPlus, FaHeart } from 'react-icons/fa'
 import { useDispatch } from 'react-redux'
@@ -6,6 +6,9 @@ import { toggleLike } from '../../redux/likesSlice'
 import { Link } from 'react-router-dom'
 
 const Likes: React.FC = () => {
+  useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [])
   const likedItems = useSelector((state: any) => state.likes)
   const dispatch = useDispatch()
 
