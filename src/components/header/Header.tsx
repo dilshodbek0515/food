@@ -14,7 +14,7 @@ const Header = () => {
     setTimeout(() => {
       toast.success('Siz login qismga qaytdingiz !')
       navigate('/login')
-    }, 500)
+    }, 400)
   }
 
   const likedItems = useSelector((state: any) => state.likes)
@@ -30,7 +30,7 @@ const Header = () => {
           {['menu', 'news', 'booking', 'about', 'contact'].map(page => (
             <li
               key={page}
-              className='text-xl duration-200 hover:text-gray-600 whitespace-nowrap max-xl:text-sm'
+              className='text-xl duration-200 hover:text-red-500 whitespace-nowrap max-xl:text-sm'
             >
               <Link to={`/${page}`}>
                 {page.charAt(0).toUpperCase() + page.slice(1)}
