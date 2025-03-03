@@ -97,7 +97,7 @@ const Menu: React.FC = () => {
                       />
                     )}
                   </div>
-                  <p className='text-black text-xl font-mono'>{item.tags}</p>
+                  <p className='text-black text-xl font-mono'>{item.tags[0]}</p>
                   <div className='flex items-center justify-between gap-2'>
                     <h3 className='text-2xl font-bold'>$ 10.0</h3>
                     <FaCartPlus
