@@ -13,11 +13,13 @@ const Korzina: React.FC = () => {
       <div className='flex items-center justify-center flex-col gap-14 mt-44'>
         <img
           className='w-96 h-96 rounded-2xl max-sm:w-72 max-sm:h-72'
-          src='https://static.vecteezy.com/system/resources/thumbnails/005/006/007/small/no-item-in-the-shopping-cart-click-to-go-shopping-now-concept-illustration-flat-design-eps10-modern-graphic-element-for-landing-page-empty-state-ui-infographic-icon-vector.jpg'
+          src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-JGyBEKsrSjQWZJTJ-B8uNYsOGMbtasr3YA&s'
           alt='empty'
         />
         <Link to={'/menu'}>
-          <button className='w-64 h-16 header_bg rounded-xl'>Go Menu</button>
+          <button className='w-64 h-16 header_bg rounded-xl hover:bg-sky-100'>
+            Go Menu
+          </button>
         </Link>
       </div>
     )
@@ -85,27 +87,23 @@ const Korzina: React.FC = () => {
       </div>
 
       <div className='container mx-auto bg-white p-6 rounded-2xl shadow-lg border border-gray-200'>
-        <h2 className='text-xl font-semibold text-center mb-4'>Ваш заказ</h2>
+        <h2 className='text-xl font-semibold text-center mb-4'>Your order</h2>
         <div className='space-y-3'>
           <div className='flex justify-between border-b pb-2'>
             <span>Products</span>
             <span className='font-medium'>{totalProducts}</span>
           </div>
           <div className='flex justify-between border-b pb-2'>
-            <span>Кола (1.5л)</span>
-            <span className='font-medium'>15000сум</span>
-          </div>
-          <div className='flex justify-between border-b pb-2'>
-            <span>Доставка</span>
-            <span className='font-medium'>Бесплатно</span>
+            <span>Delivery</span>
+            <span className='font-medium'>For free</span>
           </div>
         </div>
         <div className='flex justify-between mt-4 text-lg font-semibold'>
-          <span>Итого:</span>
+          <span>Total:</span>
           <span> $ {totalPrice} .0</span>
         </div>
         <button className='mt-4 w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition'>
-          Заказать
+          Order
         </button>
       </div>
     </div>

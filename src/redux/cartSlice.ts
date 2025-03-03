@@ -15,7 +15,6 @@ interface CartState {
 
 const initialState: CartState = {
   items: JSON.parse(localStorage.getItem('cart') || '[]')
-  // localStorage dan cart ma'lumotlarini olish
 }
 
 const cartSlice = createSlice({
@@ -31,17 +30,15 @@ const cartSlice = createSlice({
       } else {
         state.items.push(action.payload)
       }
-      // localStorage'ga saqlash
       localStorage.setItem('cart', JSON.stringify(state.items))
     },
     removeFromCart: (state, action: PayloadAction<number>) => {
       state.items = state.items.filter(item => item.id !== action.payload)
-      // localStorage'ga yangilangan cartni saqlash
       localStorage.setItem('cart', JSON.stringify(state.items))
     },
     clearCart: state => {
       state.items = []
-      localStorage.setItem('cart', JSON.stringify(state.items)) // cartni bo'shatish
+      localStorage.setItem('cart', JSON.stringify(state.items))
     }
   }
 })
