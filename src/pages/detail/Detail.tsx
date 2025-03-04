@@ -15,6 +15,7 @@ interface CartItem {
   image: string
   tags: string
   instructions: string
+  
 }
 const Detail: React.FC = () => {
   useEffect(() => {

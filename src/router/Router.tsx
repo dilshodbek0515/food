@@ -11,6 +11,9 @@ import Error from '../pages/error/Error'
 import Login from '../pages/login/Login'
 import Korzina from '../pages/korzina/Korzina'
 import Likes from '../pages/likes/Likes'
+import AdminLogin from '../pages/adminLogin/AdminLogin'
+import Dashboard from '../pages/dashboard/Dashboard'
+import PrivateRoute from '../pages/auth/PrivateRoute'
 
 const Router = () => {
   return (
@@ -19,6 +22,18 @@ const Router = () => {
         {
           path: '/login',
           element: <Login />
+        },
+        {
+          path: '/adminlogin',
+          element: <AdminLogin />
+        },
+        {
+          path: '/dashboard',
+          element: (
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          )
         },
         {
           path: '/',
