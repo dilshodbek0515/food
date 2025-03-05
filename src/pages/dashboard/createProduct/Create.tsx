@@ -4,20 +4,20 @@ import { useDispatch } from 'react-redux'
 import { addRecipe } from '../../../redux/recipeSlice'
 
 interface Recipe {
-  id: number // ID qo‘shildi
+  id: number
   image: string
   name: string
-  tags: string
+  difficulty: string
   price: string
 }
 
 const Create: React.FC = () => {
   const dispatch = useDispatch()
   const [recipe, setRecipe] = useState<Recipe>({
-    id: 0, // Default qiymat
+    id: 0,
     image: '',
     name: '',
-    tags: '',
+    difficulty: '',
     price: ''
   })
 
@@ -40,7 +40,7 @@ const Create: React.FC = () => {
         body: JSON.stringify({
           image: recipe.image,
           name: recipe.name,
-          tags: [recipe.tags],
+          difficulty: [recipe.difficulty],
           price: recipe.price
         })
       })
@@ -55,7 +55,7 @@ const Create: React.FC = () => {
       dispatch(addRecipe(recipeWithId))
 
       setMessage('Recipe added successfully!')
-      setRecipe({ id: 0, image: '', name: '', tags: '', price: '' })
+      setRecipe({ id: 0, image: '', name: '', difficulty: '', price: '' })
     } catch (error) {
       setMessage('Error adding recipe.')
     } finally {
@@ -91,9 +91,9 @@ const Create: React.FC = () => {
           required
         />
         <TextField
-          label='Tags'
-          name='tags'
-          value={recipe.tags}
+          label='Difficulty'
+          name='difficulty'
+          value={recipe.difficulty}
           onChange={handleChange}
           fullWidth
           margin='normal'
