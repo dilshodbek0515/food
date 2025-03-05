@@ -1,5 +1,4 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { FaCartPlus, FaHeart, FaRegHeart } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -23,40 +22,22 @@ interface CartItem {
 }
 
 const Menu_page: React.FC = () => {
-  const [pizza, setPizza] = useState<CartItem[]>([])
-  const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
   const dispatch = useDispatch()
+
+  // Redux store'dan retseptlarni olish
+  const recipes = useSelector(
+    (state: { recipes: { recipes: Recipe[] } }) => state.recipes.recipes
+  )
   const likedItems = useSelector((state: any) => state.likes)
-  useEffect(() => {
-    setLoading(true)
-    window.scrollTo(0, 0)
-    axios
-      .get('https://dummyjson.com/recipes')
-      .then(res => {
-        setPizza(res.data.recipes)
-      })
-      .catch(err => console.log(err))
-      .finally(() => setLoading(false))
-  }, [])
 
   const handleKorzina = (item: CartItem) => {
-    if (item) {
-      dispatch(
-        addToCart({
-          id: item.id,
-          name: item.name,
-          image: item.image,
-          count: 1
-        })
-      )
-    }
+    dispatch(addToCart({ ...item, count: 1 }))
     toast.success("Mahsulot savatga qo'shildi")
   }
 
   const handleLike = (item: Recipe) => {
     dispatch(toggleLike(item))
-    likedItems.some((liked: Recipe) => liked.id === item.id)
   }
 
   return (
@@ -65,11 +46,11 @@ const Menu_page: React.FC = () => {
         <h2 className='text-center text-7xl text-black font-bold max-md:text-4xl'>
           Popular dishes
         </h2>
-        {loading ? (
+        {recipes.length === 0 ? (
           <Loading />
         ) : (
           <div className='container mx-auto grid grid-cols-4 gap-5 max-2xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1'>
-            {pizza?.map((item: Recipe) => {
+            {recipes?.map((item: Recipe) => {
               const isLiked = likedItems.some(
                 (liked: Recipe) => liked.id === item.id
               )
@@ -86,7 +67,7 @@ const Menu_page: React.FC = () => {
                     <img
                       className='object-cover rounded-xl hover:scale-110 duration-300 cursor-pointer'
                       src={item.image}
-                      alt='img'
+                      alt={item.name}
                     />
                   </div>
                   <div className='flex items-center justify-between gap-2'>
@@ -103,10 +84,7 @@ const Menu_page: React.FC = () => {
                       />
                     )}
                   </div>
-                  <p
-                    className='text-black text-xl font-mono line-clamp-1 cursor-pointer'
-                    title={item.difficulty}
-                  >
+                  <p className='text-black text-xl font-mono line-clamp-1 cursor-pointer'>
                     {item.difficulty}
                   </p>
                   <div className='flex items-center justify-between gap-2'>
