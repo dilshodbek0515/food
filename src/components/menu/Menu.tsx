@@ -12,7 +12,7 @@ interface Recipe {
   id: number
   name: string
   image: string
-  tags: string
+  difficulty: string
 }
 
 interface CartItem {
@@ -101,7 +101,12 @@ const Menu: React.FC = () => {
                       />
                     )}
                   </div>
-                  <p className='text-black text-xl font-mono'>{item.tags[0]}</p>
+                  <p
+                    className='text-black text-xl font-mono line-clamp-1 cursor-pointer'
+                    title={item.difficulty}
+                  >
+                    {item.difficulty}
+                  </p>
                   <div className='flex items-center justify-between gap-2'>
                     <h3 className='text-2xl font-bold'>$ 10.0</h3>
                     <FaCartPlus

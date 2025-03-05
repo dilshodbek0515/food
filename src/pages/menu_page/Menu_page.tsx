@@ -12,20 +12,17 @@ interface Recipe {
   id: number
   name: string
   image: string
-  tags: string
+  difficulty: string
 }
 
 interface CartItem {
   id: number
   name: string
   image: string
-  tags: string
+  difficulty: string
 }
 
 const Menu_page: React.FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
   const [pizza, setPizza] = useState<CartItem[]>([])
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
@@ -33,6 +30,7 @@ const Menu_page: React.FC = () => {
   const likedItems = useSelector((state: any) => state.likes)
   useEffect(() => {
     setLoading(true)
+    window.scrollTo(0, 0)
     axios
       .get('https://dummyjson.com/recipes')
       .then(res => {
@@ -105,7 +103,12 @@ const Menu_page: React.FC = () => {
                       />
                     )}
                   </div>
-                  <p className='text-black text-xl font-mono'>{item.tags[0]}</p>
+                  <p
+                    className='text-black text-xl font-mono line-clamp-1 cursor-pointer'
+                    title={item.difficulty}
+                  >
+                    {item.difficulty}
+                  </p>
                   <div className='flex items-center justify-between gap-2'>
                     <h3 className='text-2xl font-bold'>$ 10.0</h3>
                     <FaCartPlus
