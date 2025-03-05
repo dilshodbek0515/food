@@ -69,7 +69,7 @@ const Manage: React.FC = () => {
       {loading ? (
         <Loading />
       ) : (
-        <div className='container mx-auto grid grid-cols-4 gap-5'>
+        <div className='container mx-auto grid grid-cols-4 gap-5 max-xl:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1'>
           {recipes?.map(recipe => (
             <div
               className='h-auto rounded-xl p-5 flex flex-col gap-3 header_bg'

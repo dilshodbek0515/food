@@ -30,8 +30,8 @@ const demoTheme = extendTheme({
   breakpoints: {
     values: {
       xs: 0,
-      sm: 600,
-      md: 600,
+      sm: 700,
+      md: 700,
       lg: 1200,
       xl: 1536
     }
