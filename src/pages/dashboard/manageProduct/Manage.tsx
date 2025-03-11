@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import { FaEdit, FaTrash } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
 import { setRecipes } from '../../../redux/recipeSlice'
@@ -161,4 +161,4 @@ const Manage: React.FC = () => {
   )
 }
 
-export default Manage
+export default memo(Manage)

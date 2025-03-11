@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import g_img1 from '../../assets/images/gallery1.png'
 import g_img2 from '../../assets/images/gallery2.png'
 import g_img3 from '../../assets/images/gallery3.png'
@@ -69,4 +69,4 @@ const Gallery: React.FC = () => {
   )
 }
 
-export default Gallery
+export default memo(Gallery)

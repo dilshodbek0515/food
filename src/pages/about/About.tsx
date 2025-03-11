@@ -1,9 +1,9 @@
-import { useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 import About_comp from '../../components/about_comp/About_comp'
 import Gallery from '../../components/gallery/Gallery'
 import Team from '../../components/team/Team'
 
-const About = () => {
+const About: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -16,4 +16,4 @@ const About = () => {
   )
 }
 
-export default About
+export default memo(About)

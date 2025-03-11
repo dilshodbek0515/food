@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import hero_img from '../../assets/images/hero.png'
 import { FaArrowRightLong } from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
@@ -27,4 +27,4 @@ const Hero: React.FC = () => {
   )
 }
 
-export default Hero
+export default memo(Hero)

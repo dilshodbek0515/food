@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import Loading from '../loading/Loading'
 import { useNavigate } from 'react-router-dom'
 interface Recipe {
@@ -54,4 +54,4 @@ const Navoste: React.FC = () => {
   )
 }
 
-export default Navoste
+export default memo(Navoste)

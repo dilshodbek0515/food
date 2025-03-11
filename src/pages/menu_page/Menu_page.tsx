@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { FaCartPlus, FaHeart, FaRegHeart } from 'react-icons/fa'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -104,4 +104,4 @@ const Menu_page: React.FC = () => {
   )
 }
 
-export default Menu_page
+export default memo(Menu_page)

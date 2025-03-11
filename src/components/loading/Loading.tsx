@@ -1,5 +1,5 @@
-import './Loading.css'
-const Loading = () => {
+import React, { memo } from 'react'
+const Loading: React.FC = () => {
   return (
     <div className='w-full flex items-center'>
       <div className='container mx-auto grid grid-cols-4 gap-5'>
@@ -81,4 +81,4 @@ const Loading = () => {
   )
 }
 
-export default Loading
+export default memo(Loading)

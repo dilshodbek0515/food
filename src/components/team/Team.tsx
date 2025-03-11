@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import team1 from '../../assets/images/team1.png'
 import team2 from '../../assets/images/team2.png'
 import team3 from '../../assets/images/team3.png'
@@ -85,4 +85,4 @@ const Team: React.FC = () => {
   )
 }
 
-export default Team
+export default memo(Team)

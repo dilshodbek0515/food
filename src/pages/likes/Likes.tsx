@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { FaCartPlus, FaHeart } from 'react-icons/fa'
 import { useDispatch } from 'react-redux'
@@ -67,4 +67,4 @@ const Likes: React.FC = () => {
   )
 }
 
-export default Likes
+export default memo(Likes)

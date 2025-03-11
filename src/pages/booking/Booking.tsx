@@ -1,7 +1,7 @@
 import Gallery from '../../components/gallery/Gallery'
 import book from '../../assets/images/booking.png'
-import { useEffect } from 'react'
-const Booking = () => {
+import React, { memo, useEffect } from 'react'
+const Booking: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -69,4 +69,4 @@ const Booking = () => {
   )
 }
 
-export default Booking
+export default memo(Booking)

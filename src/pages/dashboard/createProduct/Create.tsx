@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import { TextField, Button, Container, Typography } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import { addRecipe } from '../../../redux/recipeSlice'
@@ -123,4 +123,4 @@ const Create: React.FC = () => {
   )
 }
 
-export default Create
+export default memo(Create)

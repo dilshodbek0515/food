@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -63,4 +63,4 @@ const AdminLogin: React.FC = () => {
   )
 }
 
-export default AdminLogin
+export default memo(AdminLogin)

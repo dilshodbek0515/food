@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { memo, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import { useNavigate } from 'react-router-dom'
 import { login } from '../auth/Auth'
@@ -57,4 +57,4 @@ const Login: React.FC = () => {
   )
 }
 
-export default Login
+export default memo(Login)

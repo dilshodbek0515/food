@@ -1,10 +1,10 @@
-import * as React from 'react'
+import React, { memo } from 'react'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import Divider from '@mui/material/Divider'
 import { IoMenu } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
-const Sidebar = () => {
+const Sidebar: React.FC = () => {
   const [open, setOpen] = React.useState(false)
   const toggleDrawer = (newOpen: boolean) => () => {
     setOpen(newOpen)
@@ -76,4 +76,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default memo(Sidebar)

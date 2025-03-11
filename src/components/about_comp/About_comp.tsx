@@ -1,6 +1,7 @@
+import React, { memo } from 'react'
 import about_img from '../../assets/images/about.png'
 
-const About_comp = () => {
+const About_comp: React.FC = () => {
   return (
     <div className='w-full h-auto p-5 flex flex-col gap-32 mt-20'>
       <div className='container mx-auto flex flex-col items-center gap-20'>
@@ -68,4 +69,4 @@ const About_comp = () => {
   )
 }
 
-export default About_comp
+export default memo(About_comp)

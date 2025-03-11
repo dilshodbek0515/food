@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import { BiSolidPhoneOutgoing } from 'react-icons/bi'
 import { FaMapLocationDot } from 'react-icons/fa6'
 import { TiDownload } from 'react-icons/ti'
 
-const Contact = () => {
+const Contact: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -132,4 +132,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default memo(Contact)

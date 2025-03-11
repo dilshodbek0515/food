@@ -5,8 +5,9 @@ import { logOut } from '../../pages/auth/Auth'
 import toast, { Toaster } from 'react-hot-toast'
 import Sidebar from '../sidebar/Sidebar'
 import { useSelector } from 'react-redux'
+import React, { memo } from 'react'
 
-const Header = () => {
+const Header: React.FC = () => {
   const navigate = useNavigate()
 
   const handlelogOut = () => {
@@ -82,4 +83,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default memo(Header)

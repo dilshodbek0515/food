@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { memo, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import Loading from '../../components/loading/Loading'
 import Error from '../error/Error'
@@ -108,4 +108,4 @@ const Detail: React.FC = () => {
   )
 }
 
-export default Detail
+export default memo(Detail)

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { FaTaxi, FaUmbrellaBeach } from 'react-icons/fa'
 import { GiCook } from 'react-icons/gi'
 import { LuPizza } from 'react-icons/lu'
@@ -73,4 +73,4 @@ const Whyus: React.FC = () => {
   )
 }
 
-export default Whyus
+export default memo(Whyus)

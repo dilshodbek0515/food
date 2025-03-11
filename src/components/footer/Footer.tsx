@@ -1,8 +1,9 @@
+import React, { memo } from 'react'
 import { FaInstagram, FaTelegram, FaWhatsapp } from 'react-icons/fa'
 import { IoLogoFacebook } from 'react-icons/io5'
 import { Link } from 'react-router-dom'
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className='w-full h-auto footer_bg mt-40'>
       <div className='opacite p-5 py-20'>
@@ -45,4 +46,4 @@ const Footer = () => {
   )
 }
 
-export default Footer
+export default memo(Footer)

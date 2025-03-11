@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
 import { FaTrash } from 'react-icons/fa'
@@ -153,4 +153,4 @@ const Korzina: React.FC = () => {
   )
 }
 
-export default Korzina
+export default memo(Korzina)

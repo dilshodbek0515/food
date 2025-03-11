@@ -1,8 +1,8 @@
-import { useEffect } from 'react'
+import React, { memo, useEffect } from 'react'
 import Gallery from '../../components/gallery/Gallery'
 import Navoste from '../../components/navoste/Navoste'
 
-const Gallery_page = () => {
+const Gallery_page: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
@@ -14,4 +14,4 @@ const Gallery_page = () => {
   )
 }
 
-export default Gallery_page
+export default memo(Gallery_page)

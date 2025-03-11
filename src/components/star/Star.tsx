@@ -1,7 +1,7 @@
 import Rating from '@mui/material/Rating'
 import Box from '@mui/material/Box'
 import StarIcon from '@mui/icons-material/Star'
-import React from 'react'
+import React, { memo } from 'react'
 
 const labels: { [index: number]: string } = {
   0.5: '0.5',
@@ -19,7 +19,7 @@ const labels: { [index: number]: string } = {
 function getLabelText (value: number) {
   return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`
 }
-const Star = () => {
+const Star: React.FC = () => {
   const [value, setValue] = React.useState(0)
   const [hover, setHover] = React.useState(-1)
   return (
@@ -59,4 +59,4 @@ const Star = () => {
   )
 }
 
-export default Star
+export default memo(Star)
